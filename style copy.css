@@ -7,7 +7,7 @@
   --body-color: #B91410;
   --text-color: #003153;
   --black-color: #000000;
-  --white-color: #
+  --white-color: #ffffff;
   --shadow-img: drop-shadow(0 16px 24px hsla(0, 0%, 0%, .2));
 
   --body-font: "Montserrat Alternates", sans-serif;
@@ -484,7 +484,7 @@ img {
 .contact__social a{
   width: 32px;
   height: 32px;
-  background-color: var(--body-color);
+  background-color: var(--first-color);
   color: var(--text-color);
   font-size: 1.5rem;
   border-radius: .5rem;

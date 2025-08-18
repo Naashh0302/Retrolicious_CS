@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ JavaScript is working!");
+});
+
+window.addEventListener("scroll", function() {
+  const header = document.querySelector(".header");
+  if (window.scrollY > 0) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
 const shadowHeader = () =>{
     const header= document.getElementById('header')
     this.scrollY >= 50 ? header.classList.add('shadow-header')
@@ -39,31 +52,28 @@ const sr = ScrollReveal({
     delay: 300,
 })
 
-sr.reveal('.home__data, .about__data, .footer__container')
-sr.reveal('.home__images', {delay: 1000})
+sr.reveal('.home__data, .about__data, .footer__container, .order__container')
+sr.reveal('.home__img', {delay: 1000})
 sr.reveal('.home__dam-1', {delay: 1000, scale: 0, rotate: {z: 45}})
 sr.reveal('.home__dam-2, .home__dam-3', {delay: 1400, scale: 0, rotate: {z: 45}})
-sr.reveal('.home__dam-4', {delay: 1700, scale: 0, rotate: {z: 45}})
+sr.reveal('.home__dam-4, .home__dam-5, .about__dam-4, .about__dam-5' , {delay: 1700, scale: 0, rotate: {z: 45}})
 sr.reveal('.about__img-1', {delay: 600, origin: 'right'})
 sr.reveal('.contact__image, .delivery__img', {origin: 'left'})
 sr.reveal('.contact__data, .delivery__data', {origin: 'right'})
 
-let mixerOrder = mixitup('order__content', {
-    selectors: {
-        target: '.order__card'
-    },
-    animation: {
-        duration: 300
-    }
+
+document.querySelectorAll('.openPayment').forEach(function(button) {
+    button.addEventListener('click', function() {
+        document.getElementById('paymentModal').style.display = 'block';
+    });
 });
 
-mixerProducts.filter('.burger')
+document.getElementById('closePayment').addEventListener('click', function() {
+    document.getElementById('paymentModal').style.display = 'none';
+});
 
-const linkOrder = document.querySelectorAll('.order__item')
+const closePayment = document.getElementById('closePayment');
 
-function activeOrder(){
-    linkOrder.forEach(l=> l.classList.remove('active-order'))
-    this.classList.add('active-order')
-}
-
-LinkOrder.forEach(l=> l.addEventListener('click, activeOrder'))
+closePayment.addEventListener('click', () => {
+    paymentModal.style.display = 'none';
+});
